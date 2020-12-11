@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url:  "https://github.com/apple/swift-syntax.git",
+        .package(name: "SwiftSyntax" ,url:  "https://github.com/apple/swift-syntax.git",
                  .exact("0.50000.0")),
     ],
     targets: [
@@ -21,9 +21,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SwiftAnnotation",
-            dependencies: []),
+            dependencies: ["SwiftSyntax"]),
         .testTarget(
             name: "SwiftAnnotationTests",
-            dependencies: ["SwiftAnnotation"]),
+            dependencies: ["SwiftAnnotation", "SwiftSyntax"]),
     ]
 )

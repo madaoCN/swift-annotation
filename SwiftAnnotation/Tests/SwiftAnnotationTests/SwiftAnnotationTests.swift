@@ -1,15 +1,20 @@
 import XCTest
+import SwiftSyntax
+
 @testable import SwiftAnnotation
 
 final class SwiftAnnotationTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(SwiftAnnotation().text, "Hello, World!")
+    private let sourceSwiftAnnotationDir = "./Sources/SwiftAnnotation/"
+
+    func testSwiftSyntax() {
+        
+        // 遍历语法树
+        let url = URL.init(fileURLWithPath: sourceSwiftAnnotationDir + "SwiftAnnotation.swift")
+        let sourceFile = try? SyntaxTreeParser.parse(url)
+        print(sourceFile)
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testSwiftSyntax", testSwiftSyntax),
     ]
 }
