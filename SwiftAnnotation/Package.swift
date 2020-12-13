@@ -3,6 +3,7 @@
 
 import PackageDescription
 
+// 构建project命令swift package generate-xcodeproj
 let package = Package(
     name: "SwiftAnnotation",
     products: [
@@ -10,11 +11,11 @@ let package = Package(
         .library(
             name: "SwiftAnnotation",
             targets: ["SwiftAnnotation"]),
+        .executable(name: "SwiftAnnotation", targets: ["SwiftAnnotation"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(name: "SwiftSyntax" ,url:  "https://github.com/apple/swift-syntax.git",
-                 .exact("0.50000.0")),
+        .package(name:"SwiftSyntax", url: "https://github.com/apple/swift-syntax.git", .exact("0.50300.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
