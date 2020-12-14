@@ -8,8 +8,8 @@ let package = Package(
     name: "SwiftAnnotation",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        //.library(name: "SwiftAnnotation", targets: ["SwiftAnnotation"]),
-        //.executable(name: "SwiftAnnotationBin", targets: ["SwiftAnnotation"])
+        .library(name: "swift-annotation", targets: ["SwiftAnnotation"]),
+        //.executable(name: "SwiftAnnotation", targets: ["SwiftAnnotation"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,6 +23,6 @@ let package = Package(
             dependencies: ["SwiftSyntax"]),
         .testTarget(
             name: "SwiftAnnotationTests",
-            dependencies: ["SwiftSyntax"]),
+            dependencies: ["SwiftAnnotation"]),
     ]
 )
